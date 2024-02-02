@@ -22,8 +22,19 @@ class MyHomePage extends StatelessWidget {
       appBar: AppBar(
         title: const Text('Despesas Pessoais'),
       ),
-      body: const Center(
-        child: Text('Versao inicial'),
+      body: Column(
+        children: <Widget>[
+          Container(
+            width: double.infinity,
+            child: const Card(
+              elevation: 5,
+              child: Text('Grafico'),
+            ),
+          ),
+          Card(
+            child: Text('Lista de Transacoes'),
+          ),
+        ],
       ),
     );
   }
