@@ -23,9 +23,10 @@ class MyHomePage extends StatelessWidget {
         title: const Text('Despesas Pessoais'),
       ),
       body: Column(
+        mainAxisAlignment: MainAxisAlignment.spaceAround,
+        crossAxisAlignment: CrossAxisAlignment.stretch,
         children: <Widget>[
           Container(
-            width: double.infinity,
             child: const Card(
               elevation: 5,
               child: Text('Grafico'),
