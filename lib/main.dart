@@ -38,7 +38,11 @@ class MyHomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Despesas Pessoais'),
+        title: const Text(
+          'Despesas Pessoais',
+          style: TextStyle(color: Colors.white),
+        ),
+        backgroundColor: Colors.blue,
       ),
       body: Column(
         mainAxisAlignment: MainAxisAlignment.spaceAround,
@@ -46,12 +50,36 @@ class MyHomePage extends StatelessWidget {
         children: <Widget>[
           Container(
             child: const Card(
+              color: Colors.blue,
               elevation: 5,
-              child: Text('Grafico'),
+              child: Text(
+                'Grafico',
+                style: TextStyle(color: Colors.white),
+              ),
             ),
           ),
-          const Card(
-            child: Text('Lista de Transacoes'),
+          Column(
+            children: <Widget>[
+              ..._transactions.map((tr) {
+                return Card(
+                  child: Row(
+                    children: <Widget>[
+                      Container(
+                        child: Text(
+                          tr.value.toString(),
+                        ),
+                      ),
+                      Column(
+                        children: [
+                          Text(tr.title),
+                          Text(tr.date.toString()),
+                        ],
+                      )
+                    ],
+                  ),
+                );
+              }).toList()
+            ],
           ),
         ],
       ),
