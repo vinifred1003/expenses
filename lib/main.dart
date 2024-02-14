@@ -127,7 +127,7 @@ class MyHomePage extends StatelessWidget {
                   Row(
                     mainAxisAlignment: MainAxisAlignment.end,
                     children: [
-                      ElevatedButton(
+                      TextButton(
                         onPressed: null,
                         child: Text(
                           'Nova Transação',
