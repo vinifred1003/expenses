@@ -19,6 +19,8 @@ class MyHomePage extends StatelessWidget {
   MyHomePage({
     super.key,
   });
+  final titleController = TextEditingController();
+  final valueController = TextEditingController();
 
   final _transactions = [
     Transaction(
@@ -108,19 +110,21 @@ class MyHomePage extends StatelessWidget {
               }).toList()
             ],
           ),
-          const Card(
+          Card(
             elevation: 5,
             child: Padding(
               padding: EdgeInsets.all(10),
               child: Column(
                 children: [
                   TextField(
-                    decoration: InputDecoration(
+                    controller: titleController,
+                    decoration: const InputDecoration(
                       labelText: 'Título',
                     ),
                   ),
                   TextField(
-                    decoration: InputDecoration(
+                    controller: valueController,
+                    decoration: const InputDecoration(
                       labelText: 'Valor (R\$)',
                     ),
                   ),
@@ -128,8 +132,11 @@ class MyHomePage extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.end,
                     children: [
                       TextButton(
-                        onPressed: null,
-                        child: Text(
+                        onPressed: () {
+                          print(titleController.text);
+                          print(valueController.text);
+                        },
+                        child: const Text(
                           'Nova Transação',
                           style: TextStyle(color: Colors.purple),
                         ),
