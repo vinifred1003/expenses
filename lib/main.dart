@@ -28,23 +28,36 @@ class MyHomePage extends StatelessWidget {
           style: TextStyle(color: Colors.white),
         ),
         backgroundColor: Colors.blue,
-      ),
-      body: Column(
-        crossAxisAlignment: CrossAxisAlignment.stretch,
-        children: <Widget>[
-          Container(
-            child: const Card(
-              color: Colors.blue,
-              elevation: 5,
-              child: Text(
-                'Grafico',
-                style: TextStyle(color: Colors.white),
-              ),
-            ),
+        actions: const [
+          IconButton(
+            onPressed: null,
+            icon: Icon(Icons.add),
           ),
-          TransactionUser(),
         ],
       ),
+      body: SingleChildScrollView(
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.stretch,
+          children: <Widget>[
+            Container(
+              child: const Card(
+                color: Colors.blue,
+                elevation: 5,
+                child: Text(
+                  'Grafico',
+                  style: TextStyle(color: Colors.white),
+                ),
+              ),
+            ),
+            TransactionUser(),
+          ],
+        ),
+      ),
+      floatingActionButton: const FloatingActionButton(
+        onPressed: null,
+        child: Icon(Icons.add),
+      ),
+      floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
     );
   }
 }
