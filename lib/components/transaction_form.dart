@@ -76,7 +76,7 @@ class _TransactionFormState extends State<TransactionForm> {
                   TextButton(
                     onPressed: _showDatePicker,
                     child: Text(
-                      'Selcionar Data',
+                      'Selecionar Data',
                       style: TextStyle(
                         fontWeight: FontWeight.bold,
                         color: Theme.of(context).colorScheme.primary,
